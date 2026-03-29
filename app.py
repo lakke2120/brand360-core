@@ -14,5 +14,13 @@ def status():
         "version": "1.0"
     })
 
+@app.route("/agent")
+def agent():
+    return {
+        "agent": "Brand360 AI",
+        "capability": "customer automation",
+        "status": "ready"
+    }
+
 if __name__ == "__main__":
     app.run()
