@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -6,5 +6,13 @@ app = Flask(__name__)
 def home():
     return "Brand360 Core Service Running"
 
+@app.route("/status")
+def status():
+    return jsonify({
+        "service": "Brand360 Core",
+        "status": "running",
+        "version": "1.0"
+    })
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    app.run()
